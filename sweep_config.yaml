@@ -1,0 +1,27 @@
+method: grid
+metric:
+  name: accuracy_test
+  goal: maximize
+parameters:
+  model_name:
+    values: ['KAN']
+  feature_type:
+    values: ['mfcc', 'mfe']
+  epochs:
+    values: [100]
+  lr:
+    values: [0.001]
+  batch_size:
+    values: [32]
+  optimizer:
+    values: ['adam', 'sgd', 'adamw'] # KAN: Adam, LBFGS
+  weight_decay:
+    values: [1e-5]
+  kan_hidden:
+    values: [10, 20, 30, 50]
+  kan_grid:
+    values: [3, 5, 7]
+  kan_k:
+    values: [3, 5]
+  kan_lambda:
+    values: [0.01, 0.1, 1.0]
